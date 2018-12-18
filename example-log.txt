@@ -1,0 +1,760 @@
+System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '@p0'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at StackExchange.Profiling.Data.ProfiledDbCommand.ExecuteDbDataReader(CommandBehavior behavior) in c:\TeamCity\buildAgent\work\a743336045964cbc\StackExchange.Profiling\Data\ProfiledDbCommand.cs:line 246
+   at System.Data.Common.DbCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Dapper.SqlMapper.<MultiMapAsync>d__54`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at DapperLostParameters.Worker.<CreateRandomQuery>d__9.MoveNext() in C:\Users\raphael\documents\visual studio 2015\Projects\DapperLostParameters\DapperLostParameters\Worker.cs:line 69
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at DapperLostParameters.Worker.<Run>d__8.MoveNext() in C:\Users\raphael\documents\visual studio 2015\Projects\DapperLostParameters\DapperLostParameters\Worker.cs:line 33
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at DapperLostParameters.Program.<>c__DisplayClass6_0.<<StartNew>b__0>d.MoveNext()
+ClientConnectionId:15a32957-b99e-40ee-a4d6-b22965a69050
+Error Number:102,State:1,Class:15 HelpLink.ProdName: Microsoft SQL Server;HelpLink.ProdVer: 13.00.4001;HelpLink.EvtSrc: MSSQLServer;HelpLink.EvtID: 102;HelpLink.BaseHelpUrl: http://go.microsoft.com/fwlink;HelpLink.LinkId: 20476;profile-query-after-dapper: ExecutedCommands
+###
+CommandType: Text, CommandText: SELECT inc, UserId, GroupId, Status, Name, Age FROM Table1 WHERE 1=1  AND UserId NOT IN @p0 AND GroupId IN @p1 AND Status = @p2 AND Name NOT IN @p3 AND Age NOT IN @p4
+Database: EB84401A08EE2998429AD99133D3D6C8_STUDIO 2015\PROJECTS\DAPPERLOSTPARAMETERS\DAPPERLOSTPARAMETERS\BIN\DEBUG\APP_DATA\DATABASE1.MDF, ConnectionString: Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="|DataDirectory|\App_Data\Database1.mdf";Integrated Security=True;Connect Timeout=30
+Parameters:
+--------------
+FailedCommands
+###
+Command: MiniProfiler.Integrations.DbCommandInfo, Error: System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '@p0'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at StackExchange.Profiling.Data.ProfiledDbCommand.ExecuteDbDataReader(CommandBehavior behavior) in c:\TeamCity\buildAgent\work\a743336045964cbc\StackExchange.Profiling\Data\ProfiledDbCommand.cs:line 240
+ClientConnectionId:15a32957-b99e-40ee-a4d6-b22965a69050
+Error Number:102,State:1,Class:15
+;sql-exception-details: Command: SELECT inc, UserId, GroupId, Status, Name, Age FROM Table1 WHERE 1=1  AND UserId NOT IN @p0 AND GroupId IN @p1 AND Status = @p2 AND Name NOT IN @p3 AND Age NOT IN @p4
+Parameter values:
+[p0, System.Guid[13](b2d8b90b-10f7-e811-8290-50465d50586c, fc51b579-10f7-e811-8290-50465d50586c, 1018cc7f-10f7-e811-8290-50465d50586c, 21500c12-10f7-e811-8290-50465d50586c, 1118cc7f-10f7-e811-8290-50465d50586c, 4d836ea6-14f7-e811-8290-50465d50586c, 35ae3a41-10f7-e811-8290-50465d50586c, 80b770b6-10f7-e811-8290-50465d50586c, 261fb965-10f7-e811-8290-50465d50586c, f9c3b44b-10f7-e811-8290-50465d50586c, 36ae3a41-10f7-e811-8290-50465d50586c, 3286db2e-10f7-e811-8290-50465d50586c, 24b666ca-10f7-e811-8290-50465d50586c)];
+[p1, System.Guid[1](6e93ae8f-7358-4164-8b6f-6fab51b7b1c8)];
+[p2, 3];
+[p3, System.String[1](AAA)];
+[p4, System.Int32[1](12)]
+System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '@p0'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at StackExchange.Profiling.Data.ProfiledDbCommand.ExecuteDbDataReader(CommandBehavior behavior) in c:\TeamCity\buildAgent\work\a743336045964cbc\StackExchange.Profiling\Data\ProfiledDbCommand.cs:line 246
+   at System.Data.Common.DbCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Dapper.SqlMapper.<MultiMapAsync>d__54`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at DapperLostParameters.Worker.<CreateRandomQuery>d__9.MoveNext() in C:\Users\raphael\documents\visual studio 2015\Projects\DapperLostParameters\DapperLostParameters\Worker.cs:line 69
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at DapperLostParameters.Worker.<Run>d__8.MoveNext() in C:\Users\raphael\documents\visual studio 2015\Projects\DapperLostParameters\DapperLostParameters\Worker.cs:line 33
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at DapperLostParameters.Program.<>c__DisplayClass6_0.<<StartNew>b__0>d.MoveNext()
+ClientConnectionId:9e7bab62-441a-4cae-a6f9-c8df1126980b
+Error Number:102,State:1,Class:15 HelpLink.ProdName: Microsoft SQL Server;HelpLink.ProdVer: 13.00.4001;HelpLink.EvtSrc: MSSQLServer;HelpLink.EvtID: 102;HelpLink.BaseHelpUrl: http://go.microsoft.com/fwlink;HelpLink.LinkId: 20476;profile-query-after-dapper: ExecutedCommands
+###
+CommandType: Text, CommandText: SELECT inc, UserId, GroupId, Status, Name, Age FROM Table1 WHERE 1=1  AND Inc IN @p0 AND UserId IN @p1 AND GroupId = @p2 AND Status NOT IN @p3 AND Name IN @p4 AND Age = @p5
+Database: EB84401A08EE2998429AD99133D3D6C8_STUDIO 2015\PROJECTS\DAPPERLOSTPARAMETERS\DAPPERLOSTPARAMETERS\BIN\DEBUG\APP_DATA\DATABASE1.MDF, ConnectionString: Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="|DataDirectory|\App_Data\Database1.mdf";Integrated Security=True;Connect Timeout=30
+Parameters:
+--------------
+FailedCommands
+###
+Command: MiniProfiler.Integrations.DbCommandInfo, Error: System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '@p0'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at StackExchange.Profiling.Data.ProfiledDbCommand.ExecuteDbDataReader(CommandBehavior behavior) in c:\TeamCity\buildAgent\work\a743336045964cbc\StackExchange.Profiling\Data\ProfiledDbCommand.cs:line 240
+ClientConnectionId:9e7bab62-441a-4cae-a6f9-c8df1126980b
+Error Number:102,State:1,Class:15
+;sql-exception-details: Command: SELECT inc, UserId, GroupId, Status, Name, Age FROM Table1 WHERE 1=1  AND Inc IN @p0 AND UserId IN @p1 AND GroupId = @p2 AND Status NOT IN @p3 AND Name IN @p4 AND Age = @p5
+Parameter values:
+[p0, System.Int32[6](24, 27, 21, 7, 0, 13)];
+[p1, System.Guid[1](071765d0-10f7-e811-8290-50465d50586c)];
+[p2, 40c5e515-9a4d-4938-bd71-1d42b7a692f5];
+[p3, System.Int32[1](1)];
+[p4, System.String[0]];
+[p5, 18]
+System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '@p0'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at StackExchange.Profiling.Data.ProfiledDbCommand.ExecuteDbDataReader(CommandBehavior behavior) in c:\TeamCity\buildAgent\work\a743336045964cbc\StackExchange.Profiling\Data\ProfiledDbCommand.cs:line 246
+   at System.Data.Common.DbCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Dapper.SqlMapper.<MultiMapAsync>d__54`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at DapperLostParameters.Worker.<CreateRandomQuery>d__9.MoveNext() in C:\Users\raphael\documents\visual studio 2015\Projects\DapperLostParameters\DapperLostParameters\Worker.cs:line 69
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at DapperLostParameters.Worker.<Run>d__8.MoveNext() in C:\Users\raphael\documents\visual studio 2015\Projects\DapperLostParameters\DapperLostParameters\Worker.cs:line 33
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at DapperLostParameters.Program.<>c__DisplayClass6_0.<<StartNew>b__0>d.MoveNext()
+ClientConnectionId:b31aec7c-52d4-4edd-9c67-19165067fda1
+Error Number:102,State:1,Class:15 HelpLink.ProdName: Microsoft SQL Server;HelpLink.ProdVer: 13.00.4001;HelpLink.EvtSrc: MSSQLServer;HelpLink.EvtID: 102;HelpLink.BaseHelpUrl: http://go.microsoft.com/fwlink;HelpLink.LinkId: 20476;profile-query-after-dapper: ExecutedCommands
+###
+CommandType: Text, CommandText: SELECT inc, UserId, GroupId, Status, Name, Age FROM Table1 WHERE 1=1  AND UserId NOT IN @p0 AND GroupId IN @p1 AND Status = @p2 AND Name NOT IN @p3 AND Age NOT IN @p4
+Database: EB84401A08EE2998429AD99133D3D6C8_STUDIO 2015\PROJECTS\DAPPERLOSTPARAMETERS\DAPPERLOSTPARAMETERS\BIN\DEBUG\APP_DATA\DATABASE1.MDF, ConnectionString: Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="|DataDirectory|\App_Data\Database1.mdf";Integrated Security=True;Connect Timeout=30
+Parameters:
+--------------
+FailedCommands
+###
+Command: MiniProfiler.Integrations.DbCommandInfo, Error: System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '@p0'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at StackExchange.Profiling.Data.ProfiledDbCommand.ExecuteDbDataReader(CommandBehavior behavior) in c:\TeamCity\buildAgent\work\a743336045964cbc\StackExchange.Profiling\Data\ProfiledDbCommand.cs:line 240
+ClientConnectionId:b31aec7c-52d4-4edd-9c67-19165067fda1
+Error Number:102,State:1,Class:15
+;sql-exception-details: Command: SELECT inc, UserId, GroupId, Status, Name, Age FROM Table1 WHERE 1=1  AND UserId NOT IN @p0 AND GroupId IN @p1 AND Status = @p2 AND Name NOT IN @p3 AND Age NOT IN @p4
+Parameter values:
+[p0, System.Guid[1](071765d0-10f7-e811-8290-50465d50586c)];
+[p1, System.Guid[1](cd3bfcb4-b2e2-41f2-b2a4-57b87b70d54f)];
+[p2, 4];
+[p3, System.String[9](CSQ, AAf, AAd, CSI, AAB, CDD, BDW, ASQ, CDFF)];
+[p4, System.Int32[1](20)]
+System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '@p0'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at StackExchange.Profiling.Data.ProfiledDbCommand.ExecuteDbDataReader(CommandBehavior behavior) in c:\TeamCity\buildAgent\work\a743336045964cbc\StackExchange.Profiling\Data\ProfiledDbCommand.cs:line 246
+   at System.Data.Common.DbCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Dapper.SqlMapper.<MultiMapAsync>d__54`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at DapperLostParameters.Worker.<CreateRandomQuery>d__9.MoveNext() in C:\Users\raphael\documents\visual studio 2015\Projects\DapperLostParameters\DapperLostParameters\Worker.cs:line 69
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at DapperLostParameters.Worker.<Run>d__8.MoveNext() in C:\Users\raphael\documents\visual studio 2015\Projects\DapperLostParameters\DapperLostParameters\Worker.cs:line 33
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at DapperLostParameters.Program.<>c__DisplayClass6_0.<<StartNew>b__0>d.MoveNext()
+ClientConnectionId:924adfa8-6508-4f6d-964e-7d339187a3b3
+Error Number:102,State:1,Class:15 HelpLink.ProdName: Microsoft SQL Server;HelpLink.ProdVer: 13.00.4001;HelpLink.EvtSrc: MSSQLServer;HelpLink.EvtID: 102;HelpLink.BaseHelpUrl: http://go.microsoft.com/fwlink;HelpLink.LinkId: 20476;profile-query-after-dapper: ExecutedCommands
+###
+CommandType: Text, CommandText: SELECT inc, UserId, GroupId, Status, Name, Age FROM Table1 WHERE 1=1  AND Inc IN @p0 AND UserId IN @p1 AND GroupId = @p2 AND Status NOT IN @p3 AND Name IN @p4 AND Age = @p5
+Database: EB84401A08EE2998429AD99133D3D6C8_STUDIO 2015\PROJECTS\DAPPERLOSTPARAMETERS\DAPPERLOSTPARAMETERS\BIN\DEBUG\APP_DATA\DATABASE1.MDF, ConnectionString: Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="|DataDirectory|\App_Data\Database1.mdf";Integrated Security=True;Connect Timeout=30
+Parameters:
+--------------
+FailedCommands
+###
+Command: MiniProfiler.Integrations.DbCommandInfo, Error: System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '@p0'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at StackExchange.Profiling.Data.ProfiledDbCommand.ExecuteDbDataReader(CommandBehavior behavior) in c:\TeamCity\buildAgent\work\a743336045964cbc\StackExchange.Profiling\Data\ProfiledDbCommand.cs:line 240
+ClientConnectionId:924adfa8-6508-4f6d-964e-7d339187a3b3
+Error Number:102,State:1,Class:15
+;sql-exception-details: Command: SELECT inc, UserId, GroupId, Status, Name, Age FROM Table1 WHERE 1=1  AND Inc IN @p0 AND UserId IN @p1 AND GroupId = @p2 AND Status NOT IN @p3 AND Name IN @p4 AND Age = @p5
+Parameter values:
+[p0, System.Int32[1](5)];
+[p1, System.Guid[1](1118cc7f-10f7-e811-8290-50465d50586c)];
+[p2, 40c5e515-9a4d-4938-bd71-1d42b7a692f5];
+[p3, System.Int32[1](1)];
+[p4, System.String[1](CDFR)];
+[p5, 17]
+System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '@p0'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at StackExchange.Profiling.Data.ProfiledDbCommand.ExecuteDbDataReader(CommandBehavior behavior) in c:\TeamCity\buildAgent\work\a743336045964cbc\StackExchange.Profiling\Data\ProfiledDbCommand.cs:line 246
+   at System.Data.Common.DbCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Dapper.SqlMapper.<MultiMapAsync>d__54`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at DapperLostParameters.Worker.<CreateRandomQuery>d__9.MoveNext() in C:\Users\raphael\documents\visual studio 2015\Projects\DapperLostParameters\DapperLostParameters\Worker.cs:line 69
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at DapperLostParameters.Worker.<Run>d__8.MoveNext() in C:\Users\raphael\documents\visual studio 2015\Projects\DapperLostParameters\DapperLostParameters\Worker.cs:line 33
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at DapperLostParameters.Program.<>c__DisplayClass6_0.<<StartNew>b__0>d.MoveNext()
+ClientConnectionId:d370d3ab-0acc-4a60-956b-4742c8744452
+Error Number:102,State:1,Class:15 HelpLink.ProdName: Microsoft SQL Server;HelpLink.ProdVer: 13.00.4001;HelpLink.EvtSrc: MSSQLServer;HelpLink.EvtID: 102;HelpLink.BaseHelpUrl: http://go.microsoft.com/fwlink;HelpLink.LinkId: 20476;profile-query-after-dapper: ExecutedCommands
+###
+CommandType: Text, CommandText: SELECT inc, UserId, GroupId, Status, Name, Age FROM Table1 WHERE 1=1  AND Inc IN @p0 AND UserId IN @p1 AND GroupId = @p2 AND Status NOT IN @p3 AND Name IN @p4 AND Age = @p5
+Database: EB84401A08EE2998429AD99133D3D6C8_STUDIO 2015\PROJECTS\DAPPERLOSTPARAMETERS\DAPPERLOSTPARAMETERS\BIN\DEBUG\APP_DATA\DATABASE1.MDF, ConnectionString: Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="|DataDirectory|\App_Data\Database1.mdf";Integrated Security=True;Connect Timeout=30
+Parameters:
+--------------
+FailedCommands
+###
+Command: MiniProfiler.Integrations.DbCommandInfo, Error: System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '@p0'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at StackExchange.Profiling.Data.ProfiledDbCommand.ExecuteDbDataReader(CommandBehavior behavior) in c:\TeamCity\buildAgent\work\a743336045964cbc\StackExchange.Profiling\Data\ProfiledDbCommand.cs:line 240
+ClientConnectionId:d370d3ab-0acc-4a60-956b-4742c8744452
+Error Number:102,State:1,Class:15
+;sql-exception-details: Command: SELECT inc, UserId, GroupId, Status, Name, Age FROM Table1 WHERE 1=1  AND Inc IN @p0 AND UserId IN @p1 AND GroupId = @p2 AND Status NOT IN @p3 AND Name IN @p4 AND Age = @p5
+Parameter values:
+[p0, System.Int32[3](14, 13, 23)];
+[p1, System.Guid[1](3286db2e-10f7-e811-8290-50465d50586c)];
+[p2, 40c5e515-9a4d-4938-bd71-1d42b7a692f5];
+[p3, System.Int32[1](3)];
+[p4, System.String[19](CSQ, CDD, VFSS, CSI, AAQ, BAA, AAd, BFS, CFT, ADW, AA3, AAS, CDFR, CDS, AbA, AAB, BDW, AAx, AAc)];
+[p5, 26]
+System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '@p0'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at StackExchange.Profiling.Data.ProfiledDbCommand.ExecuteDbDataReader(CommandBehavior behavior) in c:\TeamCity\buildAgent\work\a743336045964cbc\StackExchange.Profiling\Data\ProfiledDbCommand.cs:line 246
+   at System.Data.Common.DbCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Dapper.SqlMapper.<MultiMapAsync>d__54`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at DapperLostParameters.Worker.<CreateRandomQuery>d__9.MoveNext() in C:\Users\raphael\documents\visual studio 2015\Projects\DapperLostParameters\DapperLostParameters\Worker.cs:line 69
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at DapperLostParameters.Worker.<Run>d__8.MoveNext() in C:\Users\raphael\documents\visual studio 2015\Projects\DapperLostParameters\DapperLostParameters\Worker.cs:line 33
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at DapperLostParameters.Program.<>c__DisplayClass6_0.<<StartNew>b__0>d.MoveNext()
+ClientConnectionId:0ddec963-5cb1-4dba-abb8-887ce40e3f98
+Error Number:102,State:1,Class:15 HelpLink.ProdName: Microsoft SQL Server;HelpLink.ProdVer: 13.00.4001;HelpLink.EvtSrc: MSSQLServer;HelpLink.EvtID: 102;HelpLink.BaseHelpUrl: http://go.microsoft.com/fwlink;HelpLink.LinkId: 20476;profile-query-after-dapper: ExecutedCommands
+###
+CommandType: Text, CommandText: SELECT inc, UserId, GroupId, Status, Name, Age FROM Table1 WHERE 1=1  AND Inc NOT IN @p0 AND UserId = @p1 AND GroupId NOT IN @p2 AND Status NOT IN @p3 AND Age IN @p4
+Database: EB84401A08EE2998429AD99133D3D6C8_STUDIO 2015\PROJECTS\DAPPERLOSTPARAMETERS\DAPPERLOSTPARAMETERS\BIN\DEBUG\APP_DATA\DATABASE1.MDF, ConnectionString: Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="|DataDirectory|\App_Data\Database1.mdf";Integrated Security=True;Connect Timeout=30
+Parameters:
+--------------
+FailedCommands
+###
+Command: MiniProfiler.Integrations.DbCommandInfo, Error: System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '@p0'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at StackExchange.Profiling.Data.ProfiledDbCommand.ExecuteDbDataReader(CommandBehavior behavior) in c:\TeamCity\buildAgent\work\a743336045964cbc\StackExchange.Profiling\Data\ProfiledDbCommand.cs:line 240
+ClientConnectionId:0ddec963-5cb1-4dba-abb8-887ce40e3f98
+Error Number:102,State:1,Class:15
+;sql-exception-details: Command: SELECT inc, UserId, GroupId, Status, Name, Age FROM Table1 WHERE 1=1  AND Inc NOT IN @p0 AND UserId = @p1 AND GroupId NOT IN @p2 AND Status NOT IN @p3 AND Age IN @p4
+Parameter values:
+[p0, System.Int32[27](18, 13, 23, 3, 19, 0, 17, 25, 21, 24, 26, 2, 27, 16, 29, 15, 4, 28, 14, 10, 11, 6, 9, 22, 20, 12, 8)];
+[p1, ee93123a-10f7-e811-8290-50465d50586c];
+[p2, System.Guid[1](6e93ae8f-7358-4164-8b6f-6fab51b7b1c8)];
+[p3, System.Int32[1](1)];
+[p4, System.Int32[1](24)]
+System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '@p0'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at StackExchange.Profiling.Data.ProfiledDbCommand.ExecuteDbDataReader(CommandBehavior behavior) in c:\TeamCity\buildAgent\work\a743336045964cbc\StackExchange.Profiling\Data\ProfiledDbCommand.cs:line 246
+   at System.Data.Common.DbCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Dapper.SqlMapper.<MultiMapAsync>d__54`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at DapperLostParameters.Worker.<CreateRandomQuery>d__9.MoveNext() in C:\Users\raphael\documents\visual studio 2015\Projects\DapperLostParameters\DapperLostParameters\Worker.cs:line 69
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at DapperLostParameters.Worker.<Run>d__8.MoveNext() in C:\Users\raphael\documents\visual studio 2015\Projects\DapperLostParameters\DapperLostParameters\Worker.cs:line 33
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at DapperLostParameters.Program.<>c__DisplayClass6_0.<<StartNew>b__0>d.MoveNext()
+ClientConnectionId:ade511b2-bb21-4745-9c18-dd27c50bdcc6
+Error Number:102,State:1,Class:15 HelpLink.ProdName: Microsoft SQL Server;HelpLink.ProdVer: 13.00.4001;HelpLink.EvtSrc: MSSQLServer;HelpLink.EvtID: 102;HelpLink.BaseHelpUrl: http://go.microsoft.com/fwlink;HelpLink.LinkId: 20476;profile-query-after-dapper: ExecutedCommands
+###
+CommandType: Text, CommandText: SELECT inc, UserId, GroupId, Status, Name, Age FROM Table1 WHERE 1=1  AND UserId NOT IN @p0 AND GroupId NOT IN @p1 AND Name IN @p2 AND Age NOT IN @p3
+Database: EB84401A08EE2998429AD99133D3D6C8_STUDIO 2015\PROJECTS\DAPPERLOSTPARAMETERS\DAPPERLOSTPARAMETERS\BIN\DEBUG\APP_DATA\DATABASE1.MDF, ConnectionString: Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="|DataDirectory|\App_Data\Database1.mdf";Integrated Security=True;Connect Timeout=30
+Parameters:
+--------------
+FailedCommands
+###
+Command: MiniProfiler.Integrations.DbCommandInfo, Error: System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '@p0'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at StackExchange.Profiling.Data.ProfiledDbCommand.ExecuteDbDataReader(CommandBehavior behavior) in c:\TeamCity\buildAgent\work\a743336045964cbc\StackExchange.Profiling\Data\ProfiledDbCommand.cs:line 240
+ClientConnectionId:ade511b2-bb21-4745-9c18-dd27c50bdcc6
+Error Number:102,State:1,Class:15
+;sql-exception-details: Command: SELECT inc, UserId, GroupId, Status, Name, Age FROM Table1 WHERE 1=1  AND UserId NOT IN @p0 AND GroupId NOT IN @p1 AND Name IN @p2 AND Age NOT IN @p3
+Parameter values:
+[p0, System.Guid[1](35ae3a41-10f7-e811-8290-50465d50586c)];
+[p1, System.Guid[1](40c5e515-9a4d-4938-bd71-1d42b7a692f5)];
+[p2, System.String[1](BFS)];
+[p3, System.Int32[1](22)]
+System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '@p0'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at StackExchange.Profiling.Data.ProfiledDbCommand.ExecuteDbDataReader(CommandBehavior behavior) in c:\TeamCity\buildAgent\work\a743336045964cbc\StackExchange.Profiling\Data\ProfiledDbCommand.cs:line 246
+   at System.Data.Common.DbCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Dapper.SqlMapper.<MultiMapAsync>d__54`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at DapperLostParameters.Worker.<CreateRandomQuery>d__9.MoveNext() in C:\Users\raphael\documents\visual studio 2015\Projects\DapperLostParameters\DapperLostParameters\Worker.cs:line 69
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at DapperLostParameters.Worker.<Run>d__8.MoveNext() in C:\Users\raphael\documents\visual studio 2015\Projects\DapperLostParameters\DapperLostParameters\Worker.cs:line 33
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at DapperLostParameters.Program.<>c__DisplayClass6_0.<<StartNew>b__0>d.MoveNext()
+ClientConnectionId:924adfa8-6508-4f6d-964e-7d339187a3b3
+Error Number:102,State:1,Class:15 HelpLink.ProdName: Microsoft SQL Server;HelpLink.ProdVer: 13.00.4001;HelpLink.EvtSrc: MSSQLServer;HelpLink.EvtID: 102;HelpLink.BaseHelpUrl: http://go.microsoft.com/fwlink;HelpLink.LinkId: 20476;profile-query-after-dapper: ExecutedCommands
+###
+CommandType: Text, CommandText: SELECT inc, UserId, GroupId, Status, Name, Age FROM Table1 WHERE 1=1  AND UserId NOT IN @p0 AND GroupId NOT IN @p1 AND Name IN @p2 AND Age NOT IN @p3
+Database: EB84401A08EE2998429AD99133D3D6C8_STUDIO 2015\PROJECTS\DAPPERLOSTPARAMETERS\DAPPERLOSTPARAMETERS\BIN\DEBUG\APP_DATA\DATABASE1.MDF, ConnectionString: Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="|DataDirectory|\App_Data\Database1.mdf";Integrated Security=True;Connect Timeout=30
+Parameters:
+--------------
+FailedCommands
+###
+Command: MiniProfiler.Integrations.DbCommandInfo, Error: System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '@p0'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at StackExchange.Profiling.Data.ProfiledDbCommand.ExecuteDbDataReader(CommandBehavior behavior) in c:\TeamCity\buildAgent\work\a743336045964cbc\StackExchange.Profiling\Data\ProfiledDbCommand.cs:line 240
+ClientConnectionId:924adfa8-6508-4f6d-964e-7d339187a3b3
+Error Number:102,State:1,Class:15
+;sql-exception-details: Command: SELECT inc, UserId, GroupId, Status, Name, Age FROM Table1 WHERE 1=1  AND UserId NOT IN @p0 AND GroupId NOT IN @p1 AND Name IN @p2 AND Age NOT IN @p3
+Parameter values:
+[p0, System.Guid[1](60e2789f-10f7-e811-8290-50465d50586c)];
+[p1, System.Guid[1](6e93ae8f-7358-4164-8b6f-6fab51b7b1c8)];
+[p2, System.String[10](AAQ, CDS, CSQ, BDW, VFSS, AAd, CSI, CDD, AAx, CDFR)];
+[p3, System.Int32[4](15, 8, 26, 18)]
+System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '@p0'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at StackExchange.Profiling.Data.ProfiledDbCommand.ExecuteDbDataReader(CommandBehavior behavior) in c:\TeamCity\buildAgent\work\a743336045964cbc\StackExchange.Profiling\Data\ProfiledDbCommand.cs:line 246
+   at System.Data.Common.DbCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Dapper.SqlMapper.<MultiMapAsync>d__54`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at DapperLostParameters.Worker.<CreateRandomQuery>d__9.MoveNext() in C:\Users\raphael\documents\visual studio 2015\Projects\DapperLostParameters\DapperLostParameters\Worker.cs:line 69
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at DapperLostParameters.Worker.<Run>d__8.MoveNext() in C:\Users\raphael\documents\visual studio 2015\Projects\DapperLostParameters\DapperLostParameters\Worker.cs:line 33
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at DapperLostParameters.Program.<>c__DisplayClass6_0.<<StartNew>b__0>d.MoveNext()
+ClientConnectionId:1a4ec345-e2f3-4790-a98d-6a16d14e84dd
+Error Number:102,State:1,Class:15 HelpLink.ProdName: Microsoft SQL Server;HelpLink.ProdVer: 13.00.4001;HelpLink.EvtSrc: MSSQLServer;HelpLink.EvtID: 102;HelpLink.BaseHelpUrl: http://go.microsoft.com/fwlink;HelpLink.LinkId: 20476;profile-query-after-dapper: ExecutedCommands
+###
+CommandType: Text, CommandText: SELECT inc, UserId, GroupId, Status, Name, Age FROM Table1 WHERE 1=1  AND Inc NOT IN @p0 AND UserId = @p1 AND GroupId NOT IN @p2 AND Status NOT IN @p3 AND Age IN @p4
+Database: EB84401A08EE2998429AD99133D3D6C8_STUDIO 2015\PROJECTS\DAPPERLOSTPARAMETERS\DAPPERLOSTPARAMETERS\BIN\DEBUG\APP_DATA\DATABASE1.MDF, ConnectionString: Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="|DataDirectory|\App_Data\Database1.mdf";Integrated Security=True;Connect Timeout=30
+Parameters:
+--------------
+FailedCommands
+###
+Command: MiniProfiler.Integrations.DbCommandInfo, Error: System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '@p0'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at StackExchange.Profiling.Data.ProfiledDbCommand.ExecuteDbDataReader(CommandBehavior behavior) in c:\TeamCity\buildAgent\work\a743336045964cbc\StackExchange.Profiling\Data\ProfiledDbCommand.cs:line 240
+ClientConnectionId:1a4ec345-e2f3-4790-a98d-6a16d14e84dd
+Error Number:102,State:1,Class:15
+;sql-exception-details: Command: SELECT inc, UserId, GroupId, Status, Name, Age FROM Table1 WHERE 1=1  AND Inc NOT IN @p0 AND UserId = @p1 AND GroupId NOT IN @p2 AND Status NOT IN @p3 AND Age IN @p4
+Parameter values:
+[p0, System.Int32[1](4)];
+[p1, 7fb770b6-10f7-e811-8290-50465d50586c];
+[p2, System.Guid[1](40c5e515-9a4d-4938-bd71-1d42b7a692f5)];
+[p3, System.Int32[1](1)];
+[p4, System.Int32[1](28)]
+System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '@p0'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at StackExchange.Profiling.Data.ProfiledDbCommand.ExecuteDbDataReader(CommandBehavior behavior) in c:\TeamCity\buildAgent\work\a743336045964cbc\StackExchange.Profiling\Data\ProfiledDbCommand.cs:line 246
+   at System.Data.Common.DbCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Dapper.SqlMapper.<MultiMapAsync>d__54`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at DapperLostParameters.Worker.<CreateRandomQuery>d__9.MoveNext() in C:\Users\raphael\documents\visual studio 2015\Projects\DapperLostParameters\DapperLostParameters\Worker.cs:line 69
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at DapperLostParameters.Worker.<Run>d__8.MoveNext() in C:\Users\raphael\documents\visual studio 2015\Projects\DapperLostParameters\DapperLostParameters\Worker.cs:line 33
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at DapperLostParameters.Program.<>c__DisplayClass6_0.<<StartNew>b__0>d.MoveNext()
+ClientConnectionId:3dc04e39-aab6-44b7-8419-2e7bc2075f2e
+Error Number:102,State:1,Class:15 HelpLink.ProdName: Microsoft SQL Server;HelpLink.ProdVer: 13.00.4001;HelpLink.EvtSrc: MSSQLServer;HelpLink.EvtID: 102;HelpLink.BaseHelpUrl: http://go.microsoft.com/fwlink;HelpLink.LinkId: 20476;profile-query-after-dapper: ExecutedCommands
+###
+CommandType: Text, CommandText: SELECT inc, UserId, GroupId, Status, Name, Age FROM Table1 WHERE 1=1  AND Inc NOT IN @p0 AND UserId = @p1 AND GroupId NOT IN @p2 AND Status NOT IN @p3 AND Age IN @p4
+Database: EB84401A08EE2998429AD99133D3D6C8_STUDIO 2015\PROJECTS\DAPPERLOSTPARAMETERS\DAPPERLOSTPARAMETERS\BIN\DEBUG\APP_DATA\DATABASE1.MDF, ConnectionString: Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="|DataDirectory|\App_Data\Database1.mdf";Integrated Security=True;Connect Timeout=30
+Parameters:
+--------------
+FailedCommands
+###
+Command: MiniProfiler.Integrations.DbCommandInfo, Error: System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '@p0'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at StackExchange.Profiling.Data.ProfiledDbCommand.ExecuteDbDataReader(CommandBehavior behavior) in c:\TeamCity\buildAgent\work\a743336045964cbc\StackExchange.Profiling\Data\ProfiledDbCommand.cs:line 240
+ClientConnectionId:3dc04e39-aab6-44b7-8419-2e7bc2075f2e
+Error Number:102,State:1,Class:15
+;sql-exception-details: Command: SELECT inc, UserId, GroupId, Status, Name, Age FROM Table1 WHERE 1=1  AND Inc NOT IN @p0 AND UserId = @p1 AND GroupId NOT IN @p2 AND Status NOT IN @p3 AND Age IN @p4
+Parameter values:
+[p0, System.Int32[1](22)];
+[p1, 251fb965-10f7-e811-8290-50465d50586c];
+[p2, System.Guid[1](40c5e515-9a4d-4938-bd71-1d42b7a692f5)];
+[p3, System.Int32[1](1)];
+[p4, System.Int32[1](26)]
+System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '@p0'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at StackExchange.Profiling.Data.ProfiledDbCommand.ExecuteDbDataReader(CommandBehavior behavior) in c:\TeamCity\buildAgent\work\a743336045964cbc\StackExchange.Profiling\Data\ProfiledDbCommand.cs:line 246
+   at System.Data.Common.DbCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Dapper.SqlMapper.<MultiMapAsync>d__54`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at DapperLostParameters.Worker.<CreateRandomQuery>d__9.MoveNext() in C:\Users\raphael\documents\visual studio 2015\Projects\DapperLostParameters\DapperLostParameters\Worker.cs:line 69
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at DapperLostParameters.Worker.<Run>d__8.MoveNext() in C:\Users\raphael\documents\visual studio 2015\Projects\DapperLostParameters\DapperLostParameters\Worker.cs:line 33
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at DapperLostParameters.Program.<>c__DisplayClass6_0.<<StartNew>b__0>d.MoveNext()
+ClientConnectionId:be11f99c-5705-491d-b577-edea314db5f2
+Error Number:102,State:1,Class:15 HelpLink.ProdName: Microsoft SQL Server;HelpLink.ProdVer: 13.00.4001;HelpLink.EvtSrc: MSSQLServer;HelpLink.EvtID: 102;HelpLink.BaseHelpUrl: http://go.microsoft.com/fwlink;HelpLink.LinkId: 20476;profile-query-after-dapper: ExecutedCommands
+###
+CommandType: Text, CommandText: SELECT inc, UserId, GroupId, Status, Name, Age FROM Table1 WHERE 1=1  AND Inc NOT IN @p0 AND UserId = @p1 AND GroupId NOT IN @p2 AND Status NOT IN @p3 AND Age IN @p4
+Database: EB84401A08EE2998429AD99133D3D6C8_STUDIO 2015\PROJECTS\DAPPERLOSTPARAMETERS\DAPPERLOSTPARAMETERS\BIN\DEBUG\APP_DATA\DATABASE1.MDF, ConnectionString: Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="|DataDirectory|\App_Data\Database1.mdf";Integrated Security=True;Connect Timeout=30
+Parameters:
+--------------
+FailedCommands
+###
+Command: MiniProfiler.Integrations.DbCommandInfo, Error: System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '@p0'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at StackExchange.Profiling.Data.ProfiledDbCommand.ExecuteDbDataReader(CommandBehavior behavior) in c:\TeamCity\buildAgent\work\a743336045964cbc\StackExchange.Profiling\Data\ProfiledDbCommand.cs:line 240
+ClientConnectionId:be11f99c-5705-491d-b577-edea314db5f2
+Error Number:102,State:1,Class:15
+;sql-exception-details: Command: SELECT inc, UserId, GroupId, Status, Name, Age FROM Table1 WHERE 1=1  AND Inc NOT IN @p0 AND UserId = @p1 AND GroupId NOT IN @p2 AND Status NOT IN @p3 AND Age IN @p4
+Parameter values:
+[p0, System.Int32[1](29)];
+[p1, 24b666ca-10f7-e811-8290-50465d50586c];
+[p2, System.Guid[1](cd3bfcb4-b2e2-41f2-b2a4-57b87b70d54f)];
+[p3, System.Int32[1](3)];
+[p4, System.Int32[3](6, 10, 12)]
