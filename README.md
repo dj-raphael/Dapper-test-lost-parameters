@@ -2,7 +2,7 @@
 
 Usage:
 Run program in Visual Studio debug mode  
-and wait 1 minute, if exception not catching - add 100-1000 additional workers  
+and wait for 1 minute, if exception is not catching - add 100-1000 additional workers  
 if not catching in 10 minutes - restart program
 
 without attached debugger I add about 10000 workers and wait about 10 hours
